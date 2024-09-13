@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+import os
+
+
 def minOperations(n):
     if n <= 1:
         return 0  # No operations are needed if n is less than or equal to 1
@@ -19,4 +22,14 @@ def minOperations(n):
 # Example usage:
 
 
-print(minOperations(9))  # Output: 6
+test = [9,102345]   # example
+
+for i, case in enumerate(test):
+    result = minOperations(case)
+
+    filename = f"main-{i}.py"
+
+    with open(filename, "w") as file:
+        file.write(f"result\n")
+
+    print(f"result of test {result} written to {filename}")
