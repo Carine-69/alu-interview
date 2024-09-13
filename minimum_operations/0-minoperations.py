@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+import os
+
 
 def minOperations(n):
     """
@@ -17,6 +19,7 @@ def minOperations(n):
     operations = 0  # Initialize operations to zero
     factor = 2  # Start by looking for the smallest prime factor
 
+    # Continue only while n is greater than 1
     while n > 1:
         while factor <= n:  # Loop through all possible factors up to n
             if n % factor == 0:  # Check if factor divides n evenly
@@ -24,11 +27,19 @@ def minOperations(n):
                 n //= factor  # Divide n by factor
             else:
                 factor += 1  # Move to the next factor if the current factor doesn't divide evenly
-    return operations
+    return operations  # Return the total number of operations after the loop completes
 
-# Example test cases
-test_cases = [4, 12]  # You can change or add more test cases as needed
+# Example usage:
 
-for case in test_cases:
-    result = minOperations(case)
-    print(f"Min number of operations to reach {case} characters: {result}")
+
+test = [25, 1010110, 120]  # List of test cases to evaluate
+
+for i, case in enumerate(test):
+    result = minOperations(case)  # Compute the result for the current test case
+
+    filename = f"main-{i}.py"  # Create a filename based on the index of the test case
+
+    with open(filename, "w") as file:
+        file.write(f"Min number of operations to reach {case} characters: {result}\n")  # Write the result to the file
+
+    print(f"Result of test case {case} is written to {filename}")
