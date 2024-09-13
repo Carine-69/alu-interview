@@ -32,7 +32,7 @@ def minOperations(n):
 # Example usage:
 
 
-test = [25, 1010110,120]  # List of test cases to evaluate
+test = [25, 1010110, 120]  # List of test cases to evaluate
 
 for i, case in enumerate(test):
     result = minOperations(case)  # Compute the result for the current test case
@@ -40,7 +40,6 @@ for i, case in enumerate(test):
     filename = f"main-{i}.py"  # Create a filename based on the index of the test case
 
     with open(filename, "w") as file:
-        file.write(f"Min number of operations to reach {case} characters:{result}\n")  # Write the string "result\n"
-        # to the file
+        file.write(f"Min number of operations to reach {case} characters: {result}\n")  # Write the result to the file
 
-    print(f"Result of test case {case} is written to {filename}")
+    print(f"Result of test case {case} is written to {filename}")  # Print a message indicating the result was written
