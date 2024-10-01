@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """
 Module to calculate the amount of rainwater retained between walls.
