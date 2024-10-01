@@ -1,0 +1,1 @@
+This project contains a Python script that calculates the total amount of rainwater retained between walls represented by a list of non-negative integers. Each integer represents the height of a wall, and the unit width of each wall is assumed to be 1. The script uses an efficient two-pointer technique to compute the water retention.
